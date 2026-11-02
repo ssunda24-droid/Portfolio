@@ -1,0 +1,11 @@
+import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
+import SectionLabel from './SectionLabel.jsx';
+
+export default function ContactSection({ profile }) {
+  return <section className="relative overflow-hidden border-t border-[#dfe2dc] bg-[#e8ece5] px-[6%] py-20 sm:py-28" id="contact"><div className="mx-auto max-w-[1200px]">
+    <div className="flex flex-wrap items-center justify-between gap-4"><SectionLabel number="05">THE NEXT CHAPTER</SectionLabel><span className="font-['DM_Mono',monospace] text-[10px] uppercase tracking-[0.06em] text-[#69776e]">HAVE A GOOD ONE IN MIND?</span></div>
+    <h2 className="mt-16 font-['Playfair_Display',serif] text-[clamp(48px,8vw,96px)] leading-[1.05]">Let’s make<br/><em className="text-[#b56a4c]">something matter.</em></h2>
+    <div className="mt-12 flex flex-col gap-8 border-t border-[#cfd7ce] pt-6 sm:flex-row sm:items-end sm:justify-between"><a className="inline-flex max-w-full items-center gap-3 break-all font-['Playfair_Display',serif] text-[20px] text-[#26362e] hover:text-[#b56a4c] sm:text-[24px]" href={`mailto:${profile.email}`}>{profile.email}<ArrowUpRight size={18} className="shrink-0"/></a><div className="flex flex-wrap gap-x-6 gap-y-3"><a className="inline-flex min-h-11 items-center gap-2 text-[14px] text-[#46544c] hover:text-[#b56a4c]" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={16}/> LinkedIn <ArrowUpRight size={13}/></a><a className="inline-flex min-h-11 items-center gap-2 text-[14px] text-[#46544c] hover:text-[#b56a4c]" href={profile.github} target="_blank" rel="noreferrer"><Github size={16}/> GitHub <ArrowUpRight size={13}/></a></div></div>
+    <a className="absolute bottom-8 right-[6%] hidden size-14 items-center justify-center rounded-full border border-[#aeb7af] text-[#26362e] transition-colors hover:bg-[#26362e] hover:text-white sm:flex" href={`mailto:${profile.email}`} aria-label="Email Smruthi"><Mail size={22}/><ArrowDownRight size={15} className="absolute bottom-2 right-2"/></a>
+  </div></section>;
+}

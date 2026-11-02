@@ -1,0 +1,8 @@
+import SectionLabel from './SectionLabel.jsx';
+
+export default function ExperienceSection({ experience }) {
+  return <section className="border-t border-[#dfe2dc] px-[6%] py-20 sm:py-28" id="experience"><div className="mx-auto max-w-[1200px]">
+    <div className="grid gap-8 md:grid-cols-[1fr_2fr]"><SectionLabel number="03">WHERE I’VE BEEN</SectionLabel><div><h2 className="font-['Playfair_Display',serif] text-[42px] leading-tight sm:text-[50px]">Experience<span className="text-[#b56a4c]">.</span></h2><p className="mt-3 text-[15px] text-[#63716a]">Growing through collaboration, craft, and shipping.</p></div></div>
+    <div className="mt-12">{experience.map((job, i) => <article className="grid gap-4 border-t border-[#dfe2dc] py-7 md:grid-cols-[1fr_2fr] md:gap-8 md:py-9" key={job.role}><span className="font-['DM_Mono',monospace] text-[12px] text-[#7c8980]">{job.dates}</span><div><div className="flex items-start justify-between gap-4"><div><h3 className="font-['Playfair_Display',serif] text-[20px] leading-snug sm:text-[23px]">{job.role}</h3><span className="mt-1 block text-[13px] text-[#69776e]">{job.company} · {job.location}</span></div><span className="font-['DM_Mono',monospace] text-[11px] text-[#b56a4c]">0{i + 1}</span></div><ul className="mt-4 space-y-2 text-[14px] leading-6 text-[#536158]">{job.points.map(point => <li className="flex gap-3" key={point}><span className="mt-[11px] size-1 shrink-0 rounded-full bg-[#b56a4c]"/>{point}</li>)}</ul></div></article>)}</div>
+  </div></section>;
+}
